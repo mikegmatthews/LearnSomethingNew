@@ -28,15 +28,18 @@ function love.keypressed(key, scancode, isrepeat)
         changeNote()
         soundSource:play()
         drawColor = {0, 255, 0, 255}
+    elseif key == "escape" then
+        love.window.close()
     end
 end
 
 function love.keyreleased(key, scancode)
-    -- Stop sound on spacebar
-    if key == "space" then
-        --soundSource:stop()
-        --changeNote()
-        drawColor = {255, 0, 0, 255}        
+
+end
+
+function love.update(dt)
+    if soundSource:isStopped() then
+        drawColor = {255, 0, 0, 255}
     end
 end
 
