@@ -1,7 +1,7 @@
 
 local me = require('musicengine')
 
-local musicengine
+local musicEngine
 
 local sampleRate = 44100
 
@@ -30,13 +30,11 @@ end
 
 function love.update(dt)
     musicEngine:update(dt)
-    --[[
     if musicEngine:isPlaying() then
         drawColor = {0, 255, 0, 255}
     else
         drawColor = {255, 0, 0, 255}
     end
-    --]]
 end
 
 function love.draw()
